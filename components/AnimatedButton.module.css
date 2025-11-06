@@ -1,0 +1,65 @@
+/* Este wrapper centraliza o botão dentro do espaço do seu card */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link_wrapper {
+  position: relative;
+}
+
+/* Renomeei 'a' para '.link' para não afetar outros links */
+.link {
+  display: block;
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  background: #333;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 3px solid #333;
+  transition: all .35s;
+  cursor: pointer; /* Adicionado para melhor UX */
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  border: 3px solid transparent;
+  position: absolute;
+  transform: rotate(45deg);
+  right: 0;
+  top: 0;
+  z-index: -1;
+  transition: all .35s;
+
+  /* Adicionado para centralizar o SVG perfeitamente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon svg {
+  width: 30px;
+  height: 30px; /* Garante o tamanho */
+  transform: rotate(-45deg);
+  fill: #101828; 
+  transition: all .35s;
+}
+
+.link:hover {
+  width: 200px;
+  border: 3px solid #101828;
+  background: transparent;
+  color: #101828;
+}
+
+.link:hover + .icon {
+  border: 3px solid #101828;
+  right: -25%;
+}

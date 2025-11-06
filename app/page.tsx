@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ShieldCheck, Database, BarChart, Users } from 'lucide-react';
 import FadeIn from '../components/FadeIn';
+import AnimatedButton from '../components/AnimatedButton';
 
 export default function HomePage() {
   return (
@@ -69,14 +70,10 @@ export default function HomePage() {
                   
                 </div>
                 <div className="p-6 bg-gray-50 border-t border-gray-100">
-                  <a
+                  <AnimatedButton 
                     href="https://app.softget.com.br"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors"
-                  >
-                    Acessar o Sistema
-                  </a>
+                    text="Acessar o Sistema"
+                />
                 </div>
               </div>
             </FadeIn> {/* Fim do wrapper do Card 1 */}

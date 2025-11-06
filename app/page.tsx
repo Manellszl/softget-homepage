@@ -1,65 +1,103 @@
-import Image from "next/image";
+import Link from 'next/link';
+import { ShieldCheck, Database, BarChart, Users } from 'lucide-react';
+import FadeIn from '../components/FadeIn';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="flex flex-col min-h-screen">
+      
+      {/* Seção 1: Hero (Abertura) */}
+      <section className="relative bg-gray-900 text-white py-24 md:py-32">
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
+            SoftGet<p></p> Sistemas de Gestão Inteligentes
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+            Soluções digitais seguras e eficientes para gestão de contabilidade de associações.
+            
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Seção 2: Nossas Soluções (O Portfólio) */}
+      <section id="sistemas" className="py-20 bg-white overflow-hidden">
+        <div className="container mx-auto px-6">
+          
+          {/* Envolva o título */}
+          <FadeIn>
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">
+              Conheça Nossas Soluções
+            </h2>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            
+            {/* Envolva o Card 1 */}
+            <FadeIn>
+              <div className="bg-white border border-gray-200 rounded-lg shadow-2xl overflow-hidden flex flex-col h-full">
+                <div className="p-8 flex-grow">
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    Sistema de Gestão de Associação
+                  </h3>
+                  
+                  {}
+                  <p className="mt-4 text-gray-700">
+                    A ferramenta completa baseada nos seus designs do Figma. Controle
+                    associados, finanças, patrimônio e obrigações com segurança
+                    e relatórios em tempo real.
+                  </p>
+                  <ul className="mt-6 space-y-3">
+                    <li className="flex items-center text-gray-800">
+                      <Users className="h-5 w-5 text-blue-600 mr-3" />
+                      Controle de Associados e Inadimplência
+                    </li>
+                    <li className="flex items-center text-gray-800">
+                      <Database className="h-5 w-5 text-blue-600 mr-3" />
+                      Gestão Financeira e Patrimonial
+                    </li>
+                    <li className="flex items-center text-gray-800">
+                      <BarChart className="h-5 w-5 text-blue-600 mr-3" />
+                      Relatórios e Dashboards Visuais
+                    </li>
+                    <li className="flex items-center text-gray-800">
+                      <ShieldCheck className="h-5 w-5 text-blue-600 mr-3" />
+                      Segurança e Acesso Multi-Nível
+                    </li>
+                  </ul>
+                  {}
+                  
+                </div>
+                <div className="p-6 bg-gray-50 border-t border-gray-100">
+                  <a
+                    href="https://app.softget.com.br"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                  >
+                    Acessar o Sistema
+                  </a>
+                </div>
+              </div>
+            </FadeIn> {/* Fim do wrapper do Card 1 */}
+
+
+            {/* Envolva o Card 2 */}
+            <FadeIn>
+              <div className="border-2 border-dashed border-gray-300 rounded-lg bg-gray-50 flex flex-col items-center justify-center p-8 h-full">
+                <h3 className="text-2xl font-bold text-gray-500">
+                  Em Breve: Novas Soluções
+                </h3>
+                <p className="mt-4 text-gray-500 text-center max-w-xs">
+                  Estamos desenvolvendo mais ferramentas para otimizar sua gestão
+                  contábil e administrativa.
+                </p>
+              </div>
+            </FadeIn> {/* Fim do wrapper do Card 2 */}
+            
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
